@@ -1,0 +1,10 @@
+#OS junk files
+[Tt]humbs.db
+*.DS_Store
+._.DS_Store
+*.log
+
+#Remove Dependency folder
+node_modules
+public/app/bowercomponents
+public/app/node_modules

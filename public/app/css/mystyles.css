@@ -1,0 +1,35 @@
+.mainContent {
+	background: #787878;
+	width: 100%;
+	height: 80vh;
+}
+
+.boxDetail {
+	background: white;
+	margin-top: 20px;
+}
+
+.boxDetail:hover {
+    border: thick solid #ff0000;
+	/*color: blue;*/
+}
+
+a {
+    color: #999;
+}
+
+.nav-item {
+	margin-left: 20px;
+}
+
+.nav-tabs {
+	background:white;
+}
+
+img.nav-link:hover {
+	border-bottom: thick solid #ff0000;
+}
+
+.Fatal {
+	color: red;
+}

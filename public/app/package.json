@@ -1,0 +1,31 @@
+{
+  "name": "Central Master Library",
+  "version": "1.0.0",
+  "description": "Share Master library object, variables and more across different app and servers",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/expovin/qsmig.git"
+  },
+  "keywords": [
+    "Qlik",
+    "Sense",
+    "Migration",
+    "Export"
+  ],
+  "author": "ves@qlik.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/expovin/qsmig/issues"
+  },
+  "homepage": "https://github.com/expovin/qsmig#readme",
+  "dependencies": {
+    "angular": "^1.6.2",
+    "angular-resource": "^1.6.2",
+    "angular-ui-bootstrap": "^2.5.0",
+    "angular-ui-router": "^0.4.2",
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.1.1"
+  }
+}

@@ -1,0 +1,45 @@
+
+<nav class="breadcrumb">
+  <a class="breadcrumb-item" href="#">Home</a>
+  <a class="breadcrumb-item" href="#">Library</a>
+  <a class="breadcrumb-item" href="#">Data</a>
+  <span class="breadcrumb-item active">Bootstrap</span>
+</nav>
+
+
+<div class="container">
+	<ul class="nav nav-tabs">
+	  <li class="nav-item" ng-repeat="TypeObject in QSTypeObjects">
+	    <img class="nav-link" src="img/{{TypeObject}}_{{SWITCH}}.PNG" ng-click="setObjectType(TypeObject)" ng-mouseover="SWITCH='ON'" ng-mouseleave="SWITCH='OFF'" alt="{{TypeObject}}_{{SWITCH}}.PNG" width="30px">
+	  </li>
+	</ul>
+
+
+
+	
+	<div class="container">
+		<div class="col-md-5 col-md-offset-1" ng-repeat="object in types[selectedType]">
+	  		<div class="row boxDetail" >
+	    		<div class="col-md-10">	
+					<div class="media">
+					  <div class="media-left media-middle">
+					  	<img class="media-object" src="img/{{selectedType}}_OFF.PNG" alt="{{selectedType}}_ON.PNG" width="50px">
+					  </div>
+
+					  <div class="media-body">
+					    <h3 class="mt-0">{{object[label[selectedType].name]}}</h3><small>{{object[label[selectedType].id]}}</small>
+					    	<dl class="dl-horizontal">
+					    		<div ng-repeat="(k,v) in label[selectedType]" ng-if="$index > 1">
+					    			<dt>{{k}}</dt>
+					    			<dd>{{object[label[selectedType][k]]}}</dd>
+					    		</div>
+					    	</dl>
+					    	
+					  	</div>
+					</div>
+	    		</div>
+	  		</div>
+	  	</div>
+
+	</div>
+  </div>
