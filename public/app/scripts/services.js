@@ -15,6 +15,28 @@ angular.module('qsmig')
     .service('QRSFactory', ['$resource', 'CONFIG', function($resource, CONFIG) {          
         var qrsFac = {};
 
+        qrsFac.getAllAppObjects = function(server, port){
+            return $resource(CONFIG.BASE_REST_URL+"qrs/app/object/full",{},  {
+
+                                                                        'query': { 
+                                                                            method:'GET',
+                                                                            //isArray:true,
+                                                                            headers : {
+                                                                                'server_name' : server,
+                                                                                'port' : port
+                                                                            } 
+                                                                        },
+
+                                                                        'update': { 
+                                                                            method:'PUT',
+                                                                            headers : {
+                                                                                'server_name' : server,
+                                                                                'port' : port
+                                                                            } 
+                                                                        }
+                                                                    });
+        }
+
         qrsFac.getType = function(server, port){
             return $resource(CONFIG.BASE_REST_URL+"qrs/:type",{},  {
 

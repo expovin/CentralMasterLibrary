@@ -1,0 +1,40 @@
+{
+  "id": "00000000-0000-0000-0000-000000000000",
+  "createdDate": "1753-01-01T00:00:00.000Z",
+  "modifiedDate": "1753-01-01T00:00:00.000Z",
+  "modifiedByUserName": "INTERNAL\\bootstrap",
+  "customProperties": [
+    {
+      "id": "00000000-0000-0000-0000-000000000000",
+      "createdDate": "1753-01-01T00:00:00.000Z",
+      "modifiedDate": "1753-01-01T00:00:00.000Z",
+      "modifiedByUserName": "",
+      "value": "",
+      "definition": {
+        "id": "00000000-0000-0000-0000-000000000000",
+        "name": "",
+        "valueType": "Text",
+        "choiceValues": [],
+        "privileges": null
+      },
+      "schemaPath": "CustomPropertyValue"
+    }
+  ],
+  "owner": {
+    "id": "a2a0d255-87b1-436f-8c81-8d602ff29cef",
+    "userId": "sa_engine",
+    "userDirectory": "INTERNAL",
+    "name": "sa_engine",
+    "privileges": null
+  },
+  "name": "MioStream",
+  "tags": [
+    {
+      "id": "00000000-0000-0000-0000-000000000000",
+      "name": "",
+      "privileges": null
+    }
+  ],
+  "privileges": null,
+  "schemaPath": "Stream"
+}

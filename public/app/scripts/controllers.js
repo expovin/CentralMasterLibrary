@@ -86,10 +86,10 @@ angular.module('qsmig')
 
             $scope.QSTypeObjects.forEach( function(type){
 
-                QRSFactory.getTypeFull(server,'4242').query({'type':type},
+                QRSFactory.getAllAppObjects(server,'4242').query(
                     function(response) {                        
                         console.log(response);
-                        $scope.types[type] = response;
+                        $scope.pippos = response;
                     },
                     function(response) {
                         console.log("Qui ERRORE!");

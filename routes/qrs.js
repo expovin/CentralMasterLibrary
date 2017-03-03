@@ -56,6 +56,50 @@ router.get('/*', function(req, res, next) {
      } 
 })
 
+.post('/*', function(req, res, next) {
+  //res.send('respond with a resource');
+     var pathTemplate = '/qrs/[TYPE]?xrfkey=abcdefghijklmnop';
+
+     options.hostname = options_template.hostname.replaceAll('[SERVAR-NAME]',req.headers.server_name);
+     options.port = options_template.port.replaceAll('[PORT]',req.headers.port);
+     options.path = pathTemplate.replaceAll("[TYPE]",req.params[0]);
+     options.method = 'POST';
+     options.headers = options_template.headers;
+     options.headers.Content-Type = 'application/x-www-form-urlencoded';
+     options.headers.Content-Length = Buffer.byteLength(data);
+
+
+     var str='';
+
+     try {
+	     options.key = fs.readFileSync("./cer/"+req.headers.server_name+"/client_key.pem");
+	     options.cert = fs.readFileSync("./cer/"+req.headers.server_name+"/client.pem");
+	     options.ca = fs.readFileSync("./cer/"+req.headers.server_name+"/root.pem");  
+
+		 var Inreq = https.request(options, function(Inres) {
+
+			    Inres.on('data', function (chunk) {
+		              str += chunk;
+		        });
+
+		        Inres.on('end', function () {
+		        	res.status(200);
+		            res.json(JSON.parse(str));
+				}); 
+		    });
+
+			Inreq.on('error', function(error){
+			    res.status(503);
+			    res.json(error);
+			});
+
+
+     } catch (err) {
+     	res.status(401);
+     	res.json(err);
+     } 
+})
+
 ;
 
 

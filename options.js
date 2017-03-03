@@ -4,15 +4,15 @@ var fs = require('fs');
 
 
 module.exports = {
-   hostname: '[SERVAR-NAME]',
-   port: '[PORT]',
-   path: '/qrs/[TYPE]?xrfkey=abcdefghijklmnop',
+   hostname: 'localhost',
+   port: '4242',
+   path: '/qrs/user?xrfkey=abcdefghijklmnop',
    method: 'GET',
    headers: {
       'x-qlik-xrfkey' : 'abcdefghijklmnop',
       'X-Qlik-User' : 'UserDirectory= Internal; UserId= sa_repository '
    },
-   key: "KeyToReplace",
-   cert: "KeyToReplace",
-   ca: "KeyToReplace",
+   key: fs.readFileSync("./cer/"+req.headers.server_name+"/client_key.pem");,
+   cert: fs.readFileSync("./cer/"+req.headers.server_name+"/client.pem");,
+   ca: fs.readFileSync("./cer/"+req.headers.server_name+"/root.pem"),
 }

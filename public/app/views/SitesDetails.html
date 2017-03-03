@@ -6,7 +6,7 @@
   <span class="breadcrumb-item active">Bootstrap</span>
 </nav>
 
-
+{{pippos}}
 <div class="container">
 	<ul class="nav nav-tabs">
 	  <li class="nav-item" ng-repeat="TypeObject in QSTypeObjects">
@@ -16,7 +16,12 @@
 
 
 
-	
+	<div class="container">
+		<div class="col-md-5 col-md-offset-1" ng-repeat="object in objects">
+		{{object}} - {{object.objectType}}
+		</div>
+	</div>
+	<!--
 	<div class="container">
 		<div class="col-md-5 col-md-offset-1" ng-repeat="object in types[selectedType]">
 	  		<div class="row boxDetail" >
@@ -42,4 +47,5 @@
 	  	</div>
 
 	</div>
+-->
   </div>
